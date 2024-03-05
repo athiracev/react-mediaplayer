@@ -7,7 +7,7 @@ import { uploadVideo } from '../services/allApi';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Addvideos() {
+function Addvideos({setAddStatus}) {
 
 
     const [show, setShow] = useState(false);
@@ -57,6 +57,7 @@ function Addvideos() {
             const res = await uploadVideo(video) ///this will add data in db
             //  console.log(res)
             if (res.status > 200 && res.status < 300) {
+                setAddStatus(res.data)
                 toast.success("Video Uploaded Successfully !!!")
                 handleClose()
                 setVideo('')

@@ -12,8 +12,8 @@ function VideoCard({video}) {
   return (
     <>
 
-      <Card style={{ width: '18rem',height:'300px' }} className='ms-3 mb-3'> 
-        <Card.Img style={{height:'200px'}} variant="top" src={video.image}  onClick={handleShow}/>
+      <Card style={{ width: '18rem',margin:'8px' }} className='ms-3 mb-3'> 
+        <Card.Img style={{height:'200px',borderRadius:'14px',margin:'6px',padding:'6px'}} variant="top" src={video.image}  onClick={handleShow}/>
         <Card.Body className='d-flex flex-row justify-content-between'>
           <Card.Title style={{color:'black'}}>{video.caption}</Card.Title>
           <i className="fa-solid fa-trash" style={{color:'#e51515'}}></i>

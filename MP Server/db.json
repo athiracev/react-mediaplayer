@@ -1,24 +1,6 @@
 {
   "allVideos": [
     {
-      "caption": "luzid",
-      "url": "qqqqqq",
-      "image": "hhhhhhhhh",
-      "id": 1
-    },
-    {
-      "caption": "luminar",
-      "url": "qqqaaaa",
-      "image": "ttttttttttt",
-      "id": 2
-    },
-    {
-      "caption": "gsgsg",
-      "url": "https://www.youtube.com/embed/gRjKULlhot4?si=jNGHf3xthjZ6Kpgy&autoplay=1",
-      "image": "https://www.youtube.com/watch?v=gRjKULlhot4",
-      "id": 3
-    },
-    {
       "caption": "Urugi Urugi",
       "url": "https://www.youtube.com/embed/EvMS73TWIQA?si=jNGHf3xthjZ6Kpgy&autoplay=1",
       "image": "https://a10.gaanacdn.com/images/albums/10/7402710/crop_480x480_7402710.jpg",
@@ -37,12 +19,6 @@
       "id": 6
     },
     {
-      "caption": "Premalu",
-      "url": "https://www.youtube.com/embed/rR_2ti4l3nM?si=jNGHf3xthjZ6Kpgy&autoplay=1",
-      "image": "https://th.bing.com/th?id=OIF.mms1WmFobl87wUbPKG9p%2fQ&rs=1&pid=ImgDetMain",
-      "id": 7
-    },
-    {
       "caption": "HUSN Anuv Jain",
       "url": "https://www.youtube.com/embed/gJLVTKhTnog?si=jNGHf3xthjZ6Kpgy&autoplay=1",
       "image": "https://www.lyricsagni.in/wp-content/uploads/2024/02/husn-lyrics-anuv-jain-1024x576.jpg",
@@ -55,16 +31,10 @@
       "id": 9
     },
     {
-      "caption": "Enna Sona (Ok Jaanu)",
-      "url": "https://www.youtube.com/embed/mrdRHsIkK_c?si=jNGHf3xthjZ6Kpgy&autoplay=1",
-      "image": "https://i.ytimg.com/vi/53jU1y9qE3M/maxresdefault.jpg",
-      "id": 10
-    },
-    {
-      "caption": "qqqqqqqqqq",
+      "caption": "aaaaaa",
       "url": "https://www.youtube.com/embed/undefined?si=jNGHf3xthjZ6Kpgy&autoplay=1",
-      "image": "eeeeeeeeeeee",
-      "id": 11
+      "image": "aaaaaaaaaaa",
+      "id": 10
     }
   ],
   "categories": [],
