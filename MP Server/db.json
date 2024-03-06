@@ -25,6 +25,11 @@
       "id": 9
     }
   ],
-  "categories": [],
+  "categories": [
+    {
+      "category": "anu",
+      "id": 1
+    }
+  ],
   "history": []
 }

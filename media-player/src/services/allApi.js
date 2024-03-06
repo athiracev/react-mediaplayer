@@ -15,3 +15,10 @@ export const getVideos = async()=>{
 export const deleteVideo = async(id)=>{
     return await commonApi('DELETE',`${BASE_URL}/allVideos/${id}`,{})
 }
+
+
+//categories
+
+export const categoryAdd = async(data)=>{
+    return await commonApi("POST",`${BASE_URL}/categories`,data)
+}

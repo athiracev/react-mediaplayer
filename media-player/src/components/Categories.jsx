@@ -2,11 +2,52 @@ import React,{useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { categoryAdd } from '../services/allApi';
 
 
 function Categories() {
 
   const [show, setShow] = useState(false);
+  const [addCategory,setAddCategory]=useState({
+    category:''
+  })
+
+  const getdata=(e)=>{
+    const {name,value}=e.target
+    console.log(name,value)
+    if(name==='category'){
+      setAddCategory({category:value})
+      console.log(value)
+
+    }
+    else{
+      console.log(addCategory)
+    }
+  }
+
+  const handleCategory=async()=>{
+    const{category}=addCategory
+    if(!category){
+      toast.warning('Enter valid Details')
+    }  
+    else{
+      console.log(addCategory)
+      const res = await categoryAdd(addCategory) ///this will add data in db
+
+      console.log(res)
+      if(res.status>200 && res.status<300){
+        toast.success("Added successfully")
+        handleClose()
+        setAddCategory('')
+      }
+      else{
+        toast.error("Failed !!!")
+      }
+
+    }
+  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,7 +73,7 @@ function Categories() {
         <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Add Category</Form.Label>
-        <Form.Control type="text" placeholder="Enter Category Name" />
+        <Form.Control type="text" name="category" onChange={(e)=>{getdata(e)}} placeholder="Enter Category Name" />
       </Form.Group>
       
     </Form>
@@ -41,7 +82,7 @@ function Categories() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Save</Button>
+          <Button variant="primary" onClick={handleCategory}>Add</Button>
         </Modal.Footer>
       </Modal>
 
