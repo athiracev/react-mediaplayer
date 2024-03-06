@@ -5,10 +5,11 @@ import { getVideos } from '../services/allApi'
 function Videos({addStatus}) {
 
   const [allVideos, setAllVideos] = useState([])
+  const [delStatus,setDeleteStatus]=useState({})
 
   useEffect(()=>{
     getdata()
-  },[addStatus])
+  },[addStatus,delStatus])
 
   const getdata = async () => {
 
@@ -21,7 +22,7 @@ function Videos({addStatus}) {
   return (
     <div className='bg-primary row  border border-6  border-dark p-7' style={{ borderRadius: 10 }}>
       {allVideos.map(item=>(
-      <VideoCard video={item} />
+      <VideoCard video={item}  setDeleteStatus={setDeleteStatus}/>
 
       ))}
 

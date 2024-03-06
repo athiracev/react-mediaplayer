@@ -1,11 +1,23 @@
 import React,{useState} from 'react'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Col } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import { deleteVideo } from '../services/allApi';
 
-function VideoCard({video}) {
+function VideoCard({video,setDeleteStatus}) {
   const [show, setShow] = useState(false);
+
+  const handleDelete=async(id)=>{
+    console.log(id)
+    const res= await deleteVideo(id)
+    console.log(res)
+    if(res.status>=200 && res.status<300){
+      setDeleteStatus(res)
+      toast.success("Video Deleted Successfully!!!")
+    }else{
+      toast.error("Video Deletion Failed!!!")
+    }
+  }
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,9 +28,8 @@ function VideoCard({video}) {
         <Card.Img style={{height:'200px',borderRadius:'14px',margin:'6px',padding:'6px'}} variant="top" src={video.image}  onClick={handleShow}/>
         <Card.Body className='d-flex flex-row justify-content-between'>
           <Card.Title style={{color:'black'}}>{video.caption}</Card.Title>
-          <i className="fa-solid fa-trash" style={{color:'#e51515'}}></i>
+          <i className="fa-solid fa-trash" style={{color:'#e51515'}}  onClick={()=>{handleDelete(video.id)}}></i>
 
-          {/* <Button variant="primary">Go somewhere</Button> */}
         </Card.Body>
       </Card>
 
