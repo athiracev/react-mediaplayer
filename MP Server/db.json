@@ -27,8 +27,19 @@
   ],
   "categories": [
     {
-      "category": "anu",
-      "id": 1
+      "categoryname": "Teaser",
+      "video": [],
+      "id": 3
+    },
+    {
+      "categoryname": "Movies",
+      "video": [],
+      "id": 4
+    },
+    {
+      "categoryname": "Trailer",
+      "video": [],
+      "id": 5
     }
   ],
   "history": []
