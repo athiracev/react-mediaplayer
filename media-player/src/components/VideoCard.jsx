@@ -2,10 +2,13 @@ import React,{useState} from 'react'
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import { toast } from 'react-toastify';
-import { deleteVideo } from '../services/allApi';
+import { deleteVideo,addHistory } from '../services/allApi';
 
 function VideoCard({video,setDeleteStatus}) {
   const [show, setShow] = useState(false);
+  const [history,setHistory]=useState({
+    caption:video.caption,url:video.url,datetime:''
+  })
 
   const handleDelete=async(id)=>{
     console.log(id)
@@ -19,8 +22,15 @@ function VideoCard({video,setDeleteStatus}) {
     }
   }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () =>{
+    addHistory(history)
+    setShow(false)
+  } ;
+  const handleShow = () =>{
+    const date = new Date()
+    setHistory({...history,datetime:new Date()})
+    setShow(true)
+  } ;
   return (
     <>
 

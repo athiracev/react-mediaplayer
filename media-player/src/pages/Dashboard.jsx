@@ -4,27 +4,32 @@ import Addvideos from '../components/Addvideos'
 import Videos from '../components/Videos'
 import Categories from '../components/Categories'
 import { ToastContainer } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 function Dashboard() {
 
-  const[addStatus,setAddStatus]=useState({})
+  const [addStatus, setAddStatus] = useState({})
 
   return (
-    <div>
-      <Row className='p-2'>
-        <Col sm='1' md='1'>
-          <Addvideos setAddStatus={setAddStatus }/>
-        </Col>
-        <Col sm='4' md='8'>
-          <Videos addStatus={addStatus} />
-        </Col>
-        <Col sm='2' md='3'>
-          <Categories />
-        </Col>
-      </Row>
-    <ToastContainer/>
+    <>
+      <div>
+        <h2>Watch History</h2>
+        <Link to={'/history'}></Link>
+        <Row className='p-2'>
+          <Col sm='1' md='1'>
+            <Addvideos setAddStatus={setAddStatus} />
+          </Col>
+          <Col sm='4' md='8'>
+            <Videos addStatus={addStatus} />
+          </Col>
+          <Col sm='2' md='3'>
+            <Categories />
+          </Col>
+        </Row>
+        <ToastContainer />
 
-    </div>
+      </div></>
+
 
   )
 }

@@ -30,3 +30,13 @@ export const getCategory=async()=>{
 export const deleteCategory=async(id)=>{
     return await commonApi('DELETE',`${BASE_URL}/categories/${id}`,{})
 }
+
+// history
+
+ export const addHistory=async(data)=>{
+    return await commonApi('POST',`${BASE_URL}/history`,data)
+}
+
+export const getHistory= async()=>{
+    return await commonApi('GET',`${BASE_URL}/history`,'')
+}
