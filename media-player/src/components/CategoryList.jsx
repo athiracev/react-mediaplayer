@@ -35,27 +35,40 @@ function CategoryList({ addCatStatus }) {
     } else {
       toast.error("Category Deletion Failed!!!")
     }
+  }
 
+  const handleDrop=(e,id)=>{
+    console.log("cat id"+id)
+    const vid=e.dataTransfer.getData("videoid")
+    console.log("dropped video id"+vid)
 
+    let category = allCategory.find(item=>item.id==id)
+    console.log(category)
+  }
+  
 
+  const handleDragOver=(e)=>{
+    e.preventDefault()
+    console.log("dragging over category")
   }
 
 
 
   return (
     <>
-      <div className='border border-3 border-light' mt-3 p-3 style={{ borderRadius: '5px' }}>
-        {allCategory.map(item => (
+      <div className='border border-3 border-light' mt-3 p-3 style={{ borderRadius: '5px' }} >
+        {allCategory?
+        allCategory.map(item => (
 
 
-          <div className="card" style={{ margin: '6px', padding: '8px' }}>
+          <div className="card" style={{ margin: '6px', padding: '8px' }} droppable='true'  onDragOver={e=>{handleDragOver(e)}} onDrop={e=>{handleDrop(e,item?.id)}}>
             <div className="card-body ">
               {item.categoryname}
               <i className="fa-solid fa-trash float-end" style={{ color: '#ff0000' }} onClick={() => handleDeleteCat(item.id)}></i>
             </div>
           </div>
 
-        ))}
+        )): <h3>No Category</h3>}
       </div>
 
 

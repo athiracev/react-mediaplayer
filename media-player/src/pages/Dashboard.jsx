@@ -13,8 +13,7 @@ function Dashboard() {
   return (
     <>
       <div>
-        <h2>Watch History</h2>
-        <Link to={'/history'}></Link>
+        <Link to={'/history'}>Watch History</Link>
         <Row className='p-2'>
           <Col sm='1' md='1'>
             <Addvideos setAddStatus={setAddStatus} />

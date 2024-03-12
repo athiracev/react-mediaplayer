@@ -21,10 +21,13 @@ function Videos({addStatus}) {
 
   return (
     <div className='bg-primary row  border border-6  border-dark p-5' style={{ borderRadius: 10,width:'900px' }}>
-      {allVideos.map(item=>(
+      {allVideos?
+      allVideos.map(item=>(
       <VideoCard video={item}  setDeleteStatus={setDeleteStatus}/>
 
-      ))}
+      )):
+      <h3>No Video</h3>
+      }
 
 
     </div>

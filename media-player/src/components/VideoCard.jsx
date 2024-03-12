@@ -22,19 +22,24 @@ function VideoCard({video,setDeleteStatus}) {
     }
   }
 
+const handleOnDrag=(e,id)=>{
+  console.log("Video dragged"+id)
+  e.dataTransfer.setData,"videoid",id
+}
+
   const handleClose = () =>{
     addHistory(history)
     setShow(false)
   } ;
   const handleShow = () =>{
     const date = new Date()
-    setHistory({...history,datetime:new Date()})
+    setHistory({...history,datetime:date})
     setShow(true)
   } ;
   return (
     <>
 
-      <Card style={{ width: '18rem',margin:'8px' }} className='ms-3 mb-3'> 
+      <Card style={{ width: '18rem',margin:'8px' }} className='ms-3 mb-3' draggable onDragStart={(e)=>handleOnDrag(e,video?.id)}> 
         <Card.Img style={{height:'200px',borderRadius:'14px',margin:'6px',padding:'6px'}} variant="top" src={video.image}  onClick={handleShow}/>
         <Card.Body className='d-flex flex-row justify-content-between'>
           <Card.Title style={{color:'black'}}>{video.caption}</Card.Title>

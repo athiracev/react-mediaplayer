@@ -40,3 +40,7 @@ export const deleteCategory=async(id)=>{
 export const getHistory= async()=>{
     return await commonApi('GET',`${BASE_URL}/history`,'')
 }
+
+export const deleteHistory = async(id)=>{
+    return await commonApi('DELETE',`${BASE_URL}/history/${id}`,{})
+}
