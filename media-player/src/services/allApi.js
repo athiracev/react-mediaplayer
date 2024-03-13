@@ -44,3 +44,20 @@ export const getHistory= async()=>{
 export const deleteHistory = async(id)=>{
     return await commonApi('DELETE',`${BASE_URL}/history/${id}`,{})
 }
+
+// all category video show
+
+export const getSpecificVideo=async(id)=>{
+    
+    return await commonApi('GET',`${BASE_URL}/allVideos/${id}`,"")
+
+}
+
+// patch for  partial updation 
+// entire obj structure update put
+
+export const updateCategory=async(data,id)=>{
+    return await commonApi('PUT',`${BASE_URL}/categories/${id}`,data)
+
+}
+
