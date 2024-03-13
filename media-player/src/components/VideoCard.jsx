@@ -43,7 +43,16 @@ const handleOnDrag=(e,id)=>{
         <Card.Img style={{height:'200px',borderRadius:'14px',margin:'6px',padding:'6px'}} variant="top" src={video.image}  onClick={handleShow}/>
         <Card.Body className='d-flex flex-row justify-content-between'>
           <Card.Title style={{color:'black'}}>{video.caption}</Card.Title>
+          {/* <i class="fa-solid fa-eye"></i> */}
+
+          {!cat &&
+
           <i className="fa-solid fa-trash" style={{color:'#e51515'}}  onClick={()=>{handleDelete(video.id)}}></i>
+
+        }
+
+        
+        
 
         </Card.Body>
       </Card>
